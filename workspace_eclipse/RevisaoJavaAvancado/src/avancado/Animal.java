@@ -1,6 +1,6 @@
 package avancado;
 
-public class Animal {
+public class Animal implements Comparable<Animal>{
 	
 	private Long id;
 	
@@ -18,6 +18,16 @@ public class Animal {
 
 	public String getNome() {
 		return nome;
+	}
+
+	@Override
+	public int compareTo(Animal that) {
+		return this.nome.compareTo(that.nome);
+	}
+
+	@Override
+	public String toString() {
+		return "Animal [id=" + id + ", nome=" + nome + "]";
 	}
 	
 	
